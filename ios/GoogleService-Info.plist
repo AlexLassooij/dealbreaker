@@ -4,7 +4,7 @@
 <dict>
 	<key>CLIENT_ID</key>
 	<string>610870271008-q37ermlhf65t1lnoqcpsdsgcijojrjs1.apps.googleusercontent.com</string>
-	<key>CFBundleExecutable</key>
+	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.610870271008-q37ermlhf65t1lnoqcpsdsgcijojrjs1</string>
@@ -32,5 +32,9 @@
 	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:610870271008:ios:b266c7c9e539695288b045</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.transistorsoft.fetch</string>
+	</array>
 </dict>
 </plist>

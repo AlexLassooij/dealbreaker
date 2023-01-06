@@ -23,12 +23,18 @@ export const AppStyles = {
     greenBlue: "#00aea8",
     placeholder: "#a0a0a0",
     background: "#f2f2f2",
-    blue: "#3293fe"
+    lightText: "#3293fe",
+    darkText: "yellow"
+  },
+  screenDimensions: {
+    width: width,
+    height: height
   },
   fontSize: {
-    title: 30,
-    content: 20,
-    normal: 16
+    h1: 25,
+    h2: 20,
+    h3: 15,
+    h4: 12
   },
   buttonWidth: {
     main: "70%"
@@ -41,16 +47,36 @@ export const AppStyles = {
     small: 5
   },
   lightBackground: {
-    backgroundColor: "#fffdd0"
+    backgroundColor: "#fff"
+  },
+  semiLightBackground: {
+    backgroundColor: "rgba(58, 177, 232, 0.2)"
   },
   lightFontColor: {
     color: "black"
   },
-  darkBackground: {
+  lightTOButton: {
+    borderColor: 'blue',
     backgroundColor: "grey"
+  },
+  lightBorderColor: {
+    borderColor: "rgba(210, 259, 259, 0.8)",
+  },
+  darkBackground: {
+    backgroundColor: "#212634"
+  },
+  semiDarkBackground: {
+    backgroundColor: "#444659"
   },
   darkFontColor: {
     color: "white"
+  },
+  darkTOButton: {
+    borderColor: '#ffff',
+    backgroundColor:'#d4b948',
+  },
+  darkBorderColor: {
+    borderColor: '#d4b948',
   },
   verticalContainerFS: {
       flexDirection: "column",
@@ -66,6 +92,18 @@ export const AppStyles = {
     height: height,
     width: width,
 },
+  BasicContentContainer: {
+    width: "80%",
+    // minHeight: "45%",
+    maxHeight: "100%",
+    marginTop: 40,
+    paddingTop: 20,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+}, 
   pageHeader: {
       fontSize: 30
   },
@@ -80,4 +118,26 @@ export const AppStyles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  centerPaddedText: {
+    textAlign:'center',
+    paddingLeft : 10,
+    paddingRight : 10
+},
+  TOButton: {
+    marginRight:40,
+    marginLeft:40,
+    marginTop:10,
+    paddingTop:10,
+    paddingBottom:10,
+    borderRadius:10,
+    borderWidth: 1,
+  },
+  textInputBox: {
+    height: 40,
+    margin: 12,
+    padding: 10,
+    borderWidth: 2,
+    borderRadius: 5,
+  },
+
 };

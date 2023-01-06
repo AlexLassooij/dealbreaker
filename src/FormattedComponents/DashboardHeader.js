@@ -1,13 +1,16 @@
 import React from 'react'
 
-import { View, Button, StyleSheet } from 'react-native'
+import { View, Button, StyleSheet, useColorScheme, TouchableOpacity, Image } from 'react-native'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../Reducers/Reducer.js';
 
 
 function DashboardHeader({navigation}) {
+    const imageURL = useSelector((state) => state.authReducer.user.imageURL);
+    console.log("inside header \n" + imageURL)
     const dispatch = useDispatch();
+    const isDarkMode = useColorScheme() === 'dark';
 
     signOut = async () => {
         try {
@@ -22,12 +25,16 @@ function DashboardHeader({navigation}) {
     return (
         <View style={styles.header}>
             <View>
-            <Button 
+                <TouchableOpacity 
                     onPress={() => {
                       signOut();
-                    }}
-                    title="Sign Out"
-                />
+                    }}               
+                >
+                    <Image
+                        style={{height: 40, width: 40}}
+                        source={{uri: imageURL}}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     )
