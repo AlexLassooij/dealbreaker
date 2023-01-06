@@ -1,55 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { logout } from '../Reducers/Reducer.js';
+import { useSelector } from 'react-redux';
 import firestore from '@react-native-firebase/firestore';
-
-import H1 from '../FormattedComponents/H1.js';
-import SearchResultItem from '../FormattedComponents/SearchResultItem.js';
-import { getItemObjects, getProductWatchItems } from '../backend/firebase.js';
+import { getProductWatchItems } from '../backend/firebase.js';
 
 import {
     StyleSheet,
-    Text,
-    TextInput,
-    View,
-    Alert,
-    ActivityIndicator,
     SafeAreaView,
     useColorScheme,
     ScrollView
   } from 'react-native';
 
 import { AppStyles } from '../AppStyles';
-import { useSelector } from 'react-redux';
+import H1 from '../FormattedComponents/H1.js';
+import SearchResultItem from '../FormattedComponents/SearchResultItem.js';
+
+
 
 function ProductWatch({navigation}) {
   const isDarkMode = useColorScheme() === 'dark';
   const user = useSelector((state) => state.authReducer.user);
   const userEmail = user.email;
-  // console.log("userId : " + user.id);
-  // console.log("userName : " + user.fullname);
-  // console.log("userIdEmail : " + user.email);
-  // console.log("userphoto : " + user.photoURL);
   const [itemObjects, setItemObjects] = useState([])
-
   
   useEffect(() => {
     const subscriber = firestore()
       .collection('users')
       .doc(userEmail)
       .onSnapshot(async (userSnapshot) => {
-        // const user = documentSnapshot.data();
-        // const items = user.items;
-        // const itemObjects = await getItemObjects(items);
-        // console.log("items in watch " + items);
-        // console.log("item objects " + itemObjects)
-    
-        // console.log('stringified ' + JSON.stringify(itemObjects[0]))
         getProductWatchItems(userSnapshot.data())
         .then((itemObjects) => {
           const itemComponents = itemObjects.map((itemObject) => {
-            // const itemData = itemObject[0];
-            // const key = itemObject[]
-            console.log(itemObject.key)
             return(
                 <SearchResultItem
                     navigation={navigation}
@@ -70,8 +50,6 @@ function ProductWatch({navigation}) {
         })
      
       });
-
-    // Stop listening for updates when no longer required
     return () => subscriber();
   }, [userEmail]);
 

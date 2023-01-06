@@ -1,18 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AppStyles } from '../AppStyles';
-
-import { View, StyleSheet, useColorScheme, TouchableOpacity, Image, Text } from 'react-native';
+import { signOutOfGoogle } from '../backend/firebase';
 import { useDispatch, useSelector } from 'react-redux';
-
-
 import { logout } from '../Reducers/Reducer.js';
+
+import { 
+    View, 
+    StyleSheet, 
+    useColorScheme, 
+    TouchableOpacity, 
+    Image } from 'react-native';
+
 import H1 from '../FormattedComponents/H1.js';
 import H2 from '../FormattedComponents/H2';
 import H3 from '../FormattedComponents/H3';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { signOutOfGoogle } from '../backend/firebase';
 import Icon from 'react-native-vector-icons/FontAwesome';
-// Icon.loadFont().then();
 
 
 function ProfileModal({navigation}) {
@@ -21,8 +24,6 @@ function ProfileModal({navigation}) {
     const email = useSelector((state) => state.authReducer.user.email);
 
     const isDarkMode = useColorScheme() === 'dark';
-    //const modalButton = <Icon name="upcircle" size={30} color={isDarkMode ? "white" : "black"} />;
-    // const googleIcon = <Icon name="google" size={10} color="#EA4335" />;
     const dispatch = useDispatch();
 
     const handleSignout = async () => {
@@ -43,7 +44,7 @@ function ProfileModal({navigation}) {
                         <H2
                             text={"Signed In With"}
                         />
-                        <Icon name="google" size={20} /*color="#EA4335"*/ />
+                        <Icon name="google" size={20}/>
                     </View>
                     
                     <Image
@@ -75,7 +76,6 @@ function ProfileModal({navigation}) {
     );
 };
 
-
 const styles = StyleSheet.create({
     SignInInfoContainer: {
         flexDirection: "row",
@@ -83,15 +83,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: "65%",
     },
-    // ProfileInfoContainer: {
-    //     justifyContent: "flex-start",
-    //     alignItems: "center",
-    //     borderRadius: 10,
-    //     width: "80%",
-    //     minHeight: "45%",
-    //     maxHeight: "85%",
-    //     paddingTop: 40
-    // },
     SignOutButton : {
         backgroundColor: "rgba(234, 173, 154, 0.6)",
         alignItems: "center",
@@ -100,6 +91,5 @@ const styles = StyleSheet.create({
         marginVertical: 60
     }
 })
-
 
 export default ProfileModal

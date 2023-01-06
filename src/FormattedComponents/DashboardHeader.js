@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { View, Button, StyleSheet, useColorScheme, TouchableOpacity, Image } from 'react-native'
+import { View, StyleSheet, useColorScheme, TouchableOpacity, Image } from 'react-native'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../Reducers/Reducer.js';
@@ -10,7 +10,6 @@ function DashboardHeader({navigation}) {
     const imageURL = useSelector((state) => state.authReducer.user.imageURL);
     console.log("inside header \n" + imageURL)
     const dispatch = useDispatch();
-    const isDarkMode = useColorScheme() === 'dark';
 
     signOut = async () => {
         try {

@@ -1,6 +1,4 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { itemSelect } from '../Reducers/Reducer';
 
 import H2 from './H2';
 import H3 from './H3';
@@ -9,11 +7,8 @@ import H4 from './H4';
 import {
     StyleSheet,
     Image,
-    Text,
-    TextInput,
     View,
     TouchableOpacity,
-    SafeAreaView,
     useColorScheme,
     Dimensions
   } from 'react-native';
@@ -23,10 +18,8 @@ import { AppStyles } from '../AppStyles';
 
 function SearchResultItem({navigation, key, title, description, price, imageURL, ASIN}) {
     const isDarkMode = useColorScheme() === 'dark';
-    const dispatch = useDispatch;
 
     function handleItemPress() {
-    
         navigation.navigate('SearchItem', {
             title: title,
             description: description,
@@ -65,7 +58,6 @@ function SearchResultItem({navigation, key, title, description, price, imageURL,
             />
         </View>
         </TouchableOpacity>
-        
     )
 }
 const { width, height } = Dimensions.get("window");

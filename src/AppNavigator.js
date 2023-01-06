@@ -1,20 +1,15 @@
 import React from 'react';
-import { Image, Pressable, StyleSheet, useColorScheme, Dimensions } from 'react-native';
+import { useColorScheme, Dimensions } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { SafeAreaInsetsContext } from 'react-native-safe-area-context';
-import {AppStyles} from 'AppStyles';
 
-
-
-import DashboardHeader from './FormattedComponents/DashboardHeader';
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from './screens/LoginScreen'
 import ProductWatch from './screens/ProductWatch';
 import NewProductSearch from './screens/NewProductSearch';
 import AddItemScreen from './screens/AddItemScreen';
-import CustomHeader from './FormattedComponents/DashboardHeader';
 import SearchResultScreen from './screens/SearchResultScreen';
 import ProfileModal from './screens/ProfileModal';
 
@@ -103,5 +98,5 @@ const AppNavigator = () => {
     </NavigationContainer>
     );
 };
-// left off at moving tab navigator down, figuring out background color  
+
 export default AppNavigator;

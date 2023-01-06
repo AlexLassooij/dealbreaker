@@ -53,9 +53,6 @@ function authReducer(state = initialAuthState, action) {
     case LOGIN:
       return {...state, isLoggedIn: true, user: action.payload};
     case LOGOUT:
-    //   AsyncStorage.removeItem('@loggedInUserID:id');
-    //   AsyncStorage.removeItem('@loggedInUserID:key');
-    //   AsyncStorage.removeItem('@loggedInUserID:password');
       return {...state, isLoggedIn: false, user: {}};
     case LOGGINGIN:
         return {...state, isLoggingIn: action.payload}

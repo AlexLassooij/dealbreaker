@@ -3,17 +3,10 @@ import { useSelector } from 'react-redux';
 
 import {
     StyleSheet,
-    FlatList,
-    Image,
-    Text,
-    TextInput,
-    View,
-    TouchableOpacity,
     SafeAreaView,
     ScrollView,
     useColorScheme,
     Dimensions,
-    StatusBar
   } from 'react-native';
 
 import { AppStyles } from '../AppStyles';
@@ -22,7 +15,7 @@ import SearchResultItem from '../FormattedComponents/SearchResultItem';
 function SearchResultScreen({navigation}) {
     const isDarkMode = useColorScheme() === 'dark';
     const searchResults = useSelector((state) => state.searchReducer.searchResults)
-    
+
     const searchResultComponents = searchResults.map((searchResult) => {
         return(
             <SearchResultItem

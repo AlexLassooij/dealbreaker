@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { StyleSheet, SafeAreaView, View, Text, TouchableOpacity, useColorScheme } from 'react-native';
+import { StyleSheet, SafeAreaView, View, TouchableOpacity, useColorScheme } from 'react-native';
 import { AppStyles } from "../AppStyles";
 import H1 from '../FormattedComponents/H1';
 import H2 from '../FormattedComponents/H2';
@@ -38,7 +38,7 @@ function HomeScreen({navigation}) {
             }
                 text={'Welcome to dealbreaker'}
             />
-                <Icon name="binoculars" size={40} /*color="#EA4335"*/ />
+                <Icon name="binoculars" size={40}/>
                 <H2 style={[]}
                 text={'Ready to strike some great deals ?'}
             />
@@ -55,7 +55,6 @@ function HomeScreen({navigation}) {
                     text={"Get Started"}
                     />
             </TouchableOpacity>
-                            
            </View>
        </SafeAreaView>
     )
@@ -80,6 +79,5 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     }
 });
-
 
 export default HomeScreen;

@@ -6,26 +6,19 @@ import { openOnAmazon } from '../backend/notifications';
 
 import H1 from '../FormattedComponents/H1';
 import H2 from '../FormattedComponents/H2';
-import H3 from '../FormattedComponents/H3';
 import H4 from '../FormattedComponents/H4';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-// Icon.loadFont().then();
 
 
 import {
     StyleSheet,
-    FlatList,
     Image,
-    Text,
-    TextInput,
     View,
     TouchableOpacity,
     SafeAreaView,
-    ScrollView,
     useColorScheme,
     Dimensions,
-    StatusBar
   } from 'react-native';
 
 import { AppStyles } from '../AppStyles';
@@ -41,9 +34,6 @@ function AddItemScreen({route, navigation}) {
     const maxAllowedTitleLines = 5;
 
     const [itemText, setItemText] = useState('Add Item to Watch');
-
-    // console.log("from within SRS:")
-    // console.log(searchResults[0])
 
     const addItem = () => {
         console.log("additem")
@@ -62,7 +52,6 @@ function AddItemScreen({route, navigation}) {
             setItemText('Item has been added !')
             dispatch(updateItems(items));
         }
- 
     }
 
     return (
@@ -107,7 +96,7 @@ function AddItemScreen({route, navigation}) {
                     style={{color: AppStyles.color.lightText, fontWeight: 'bold'}}
                     text={itemText}
                     />
-                    <Icon name="binoculars" size={20} /*color="#EA4335"*/ />
+                    <Icon name="binoculars" size={20} />
             </TouchableOpacity>
             <TouchableOpacity 
                 onPress={() => {
@@ -125,13 +114,11 @@ function AddItemScreen({route, navigation}) {
     )
 }
 
-const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
  
     SRContainerSolo: {
         width: "80%",
-        // minHeight: "45%",
         maxHeight: "100%",
         marginTop: 40,
         paddingTop: 20,
@@ -145,7 +132,6 @@ const styles = StyleSheet.create({
     SRContentContainer: {
         marginVertical: 10,
         width: "100%",
-        // minHeight: "30%",
         maxHeight: "80%",
         flexDirection: "column",
         alignItems: "center",

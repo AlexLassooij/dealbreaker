@@ -99,6 +99,7 @@ function userObjectBuilder(userInfo) {
   };
 }
 
+// 
 export async function registerUser(userResult) {
   const userEmail = userResult.email;
   const userRef = getCollection(userCollection).doc(userEmail)
@@ -127,6 +128,7 @@ export async function registerUser(userResult) {
   })
 }
 
+// add item to product watch
 export async function addItemToWatchList(userEmail, item) {
   const ASIN = item.ASIN;
   getCollection(itemCollection)
@@ -164,6 +166,7 @@ export async function addItemToWatchList(userEmail, item) {
   
 }
 
+// iteratively check for a price decline for each item on user's product watch
 export async function checkAllPricesForUser(userEmail) {
   getCollection(userCollection).doc(userEmail).get()
   .then(async (user) => {
@@ -177,6 +180,7 @@ export async function checkAllPricesForUser(userEmail) {
   });
 }
 
+// queries all item documents from firestore using the ASINs as the document id
 export async function getItemObjects(ASINs) {
   var itemObjects = [];
   for(let i=0; i<ASINs.length; i++){
@@ -187,6 +191,9 @@ export async function getItemObjects(ASINs) {
   return itemObjects;
 }
 
+// compares stored price to current price on amazon
+// sends notification if there is a decline
+// TODO : update stored price if there is a change price
 export async function evaluatePrice(item) {
   const ASIN = item.ASIN;
   const previousPrice = parseFloat(item.price);

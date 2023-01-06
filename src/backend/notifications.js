@@ -80,11 +80,23 @@ export async function setCategories() {
     ]);
 }
 
+const backgroundFetchOptions = {
+    minimumFetchInterval: 30,
+    stopOnTerminate: false,
+    enableHeadless: true,
+    startOnBoot: true,
+    // Android options
+    forceAlarmManager: false,      // <-- Set true to bypass JobScheduler.
+    requiredNetworkType: BackgroundFetch.NETWORK_TYPE_NONE, 
+    requiresCharging: false,       
+    requiresDeviceIdle: false,    
+    requiresBatteryNotLow: false,
+    requiresStorageNotLow: false, 
+  }
+  
 export async function configureBackgroundFetch(userEmail) {
     const onEvent = async (taskId) => {
         console.log('[BackgroundFetch] task: ', taskId);
-        // Do your background work...
-        // IMPORTANT:  You must signal to the OS that your task is complete.
         checkAllPricesForUser(userEmail);
         BackgroundFetch.finish(taskId);
       }
@@ -97,8 +109,6 @@ export async function configureBackgroundFetch(userEmail) {
     let status = await BackgroundFetch.configure(
         backgroundFetchOptions, 
         onEvent, 
-        onTimeout);
-        
-       
+        onTimeout);  
 }
 
