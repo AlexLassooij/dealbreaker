@@ -11,11 +11,15 @@ Besides React Native, the app utilizes the following libraries / frameworks :
 - [Notifee for notifications](https://notifee.app/react-native/docs/overview)
 - [Background Fetch](https://github.com/transistorsoft/react-native-background-fetch)
 
-### Demo - Adding item
+### Demo - Sign in and adding item
+https://user-images.githubusercontent.com/71570400/211247480-32a9b48f-e6fc-478e-a9bb-221b40cd80c7.mov
 
 ### Demo - Price decline notification
+https://user-images.githubusercontent.com/71570400/211247506-99a94ef5-edcf-4c89-8b7a-a82f052e3d23.mp4
 
 ### Screens
+![screens](https://user-images.githubusercontent.com/71570400/211247984-16014670-3183-4fd7-8322-7f240f698901.png)
+
 
 ### TODO / Improvements
 
@@ -24,11 +28,9 @@ Besides React Native, the app utilizes the following libraries / frameworks :
 - Set color palette for dark mode
 - Clean up styling
 
-https://user-images.githubusercontent.com/71570400/211247480-32a9b48f-e6fc-478e-a9bb-221b40cd80c7.mov
 
 
 
-https://user-images.githubusercontent.com/71570400/211247506-99a94ef5-edcf-4c89-8b7a-a82f052e3d23.mp4
 
 ![Simulator Screen Shot - iPhone 14 - 2023-01-06 at 13 37 19](https://user-images.githubusercontent.com/71570400/211247552-a7431952-2b01-4894-9f0b-1a092bcb227f.png)
 ![Simulator Screen Shot - iPhone 14 - 2023-01-05 at 17 41 46](https://user-images.githubusercontent.com/71570400/211247556-d6554b1e-9442-4054-9604-b92fbc9246fe.png)
