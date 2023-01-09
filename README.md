@@ -18,9 +18,7 @@ https://user-images.githubusercontent.com/71570400/211247480-32a9b48f-e6fc-478e-
 https://user-images.githubusercontent.com/71570400/211247506-99a94ef5-edcf-4c89-8b7a-a82f052e3d23.mp4
 
 ### Screens
-![Screen Shot 2023-01-08 at 10 00 33 PM](https://user-images.githubusercontent.com/71570400/211248610-84412fdf-d4f8-42bb-8268-951402f8fd32.png)
-
-
+![Screen Shot 2023-01-08 at 10 04 44 PM](https://user-images.githubusercontent.com/71570400/211248988-78d09d02-070e-4568-acad-8e8f97e9af1f.png)
 
 ### TODO / Improvements
 
